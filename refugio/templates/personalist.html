@@ -1,0 +1,27 @@
+{% extends 'header.html' %}
+{%block content%}
+
+<div class="container">
+<!--<a href="{% url 'logout' %}">Salir</a>-->
+	<h1>Personas</h1>
+
+<div class="container">
+<div class="">
+	<div class="col-12">
+		
+	
+{% for persona in personas %}
+
+    <h2>{{persona.nombre}}</h2> 
+    <h4>{{persona.apellidos}}<br></h4>
+    <h4>{{persona.edad}}<br></h4>
+    <h4>{{persona.domicilio}}<br></h4>
+    *****************************************<br>
+
+
+    {%endfor%}
+
+</div></div></div>
+{%endblock%}
+</body>
+</html>

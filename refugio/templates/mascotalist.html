@@ -1,0 +1,29 @@
+{% extends 'header.html' %}
+{%block content%}
+<div class="container">
+	<div class="container">
+	{%for mascota in mascotaslist%}
+<h2>Nombre: {{mascota.nombre}}</h2>
+<h3>Edad: {{mascota.edad_aproximada}}</h3>
+<h3>Sexo: {{mascota.sexo}}</h3>
+<h3>Fecha rescate: {{mascota.fecha_rescate}}</h3>
+
+{% if mascota.persona == None %}
+<h3>Persona: Sin Dueño</h3>
+
+
+{% else %}
+
+<h3>Persona: {{mascota.persona}}</h3>
+<h6><a href="{% url 'personadetail' mascota.persona.id  %}">Ver Persona</a><br></h6>
+
+
+{% endif %}
+<span>**********************************************</span>
+
+{%endfor%}
+</div>
+</div>
+{%endblock%}
+</body>
+</html>
