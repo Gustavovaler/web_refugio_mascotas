@@ -85,3 +85,9 @@ class PersonaUpdate(LoginRequiredMixin, UpdateView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data()
 		return context
+
+class PersonaCreate(LoginRequiredMixin, CreateView):
+	login_url = '/accounts/login/'
+	model = Persona
+	template_name = 'nueva_persona.html'
+	fields = '__all__'

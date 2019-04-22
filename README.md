@@ -10,7 +10,7 @@ version de python = 3.5.0
 gestor de base de datos = sqlite3
 
 This project is about a pet shelter, where we take register of pet and their possible adopters.
-All  necesary views has been done using Django's class based views.
+All  necessary views has been done using Django's class based views.
 About front-end, it is some forgetted just for this moment. Any help is welcome. 
 
 
