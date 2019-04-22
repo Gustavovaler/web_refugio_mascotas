@@ -6,11 +6,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, request
 
 
+#vista de funcion para la landing page. A mejorar en un futuro proximo
 
 def index(request):
 	return HttpResponse(render(request,template_name = 'index.html'))
 
-
+# vista  para listar todas las mascotas
 class MascotaList(LoginRequiredMixin, ListView):
 	login_url = '/accounts/login/'
 	model = Mascota
