@@ -4,20 +4,21 @@
 	<div class="container">
 	{%for mascota in mascotaslist%}
 
-<a href="{% url 'mascotadetail' mascota.id %}"><h2>Nombre: {{mascota.nombre}}</h2></a>
+<a href="{% url 'mascotadetail' mascota.id %}"><h3>Nombre: {{mascota.nombre}}</h3></a>
 
-<h3>Edad: {{mascota.edad_aproximada}}</h3>
-<h3>Sexo: {{mascota.sexo}}</h3>
-<h3>Fecha rescate: {{mascota.fecha_rescate}}</h3>
+<h5>Edad: {{mascota.edad_aproximada}}</h5>
+<h5>Sexo: {{mascota.sexo}}</h5>
+<h5>Fecha rescate: {{mascota.fecha_rescate}}</h5>
 
 {% if mascota.persona == None %}
-<h3>Persona: Sin Dueño</h3>
+<h5>Persona: Sin Dueño</h5>
 
 
 {% else %}
 
-<h3>Persona: {{mascota.persona}}</h3>
+<h5>Persona: {{mascota.persona}} {{mascota.persona.apellidos}}</h5>
 <h6><a href="{% url 'personadetail' mascota.persona.id  %}">Ver Persona</a><br></h6>
+<h6><a href="{% url 'personadetail' mascota.persona.id  %}">Borrar Mascota</a><br></h6>
 
 
 {% endif %}

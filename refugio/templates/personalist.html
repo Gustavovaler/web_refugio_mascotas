@@ -7,19 +7,21 @@
 
 <div class="container">
 <div class="">
-    <p><h4><a href="">Nuevo Padrino</a></h4></p>
+    <p><h6><a href="">Nuevo Padrino</a></h6></p>
     *********************************
 	<div class="col-12">
 		
 	
 {% for persona in personas %}
 
-    <h2>{{persona.nombre}}</h2> 
-    <h4>{{persona.apellidos}}<br></h4>
-    <h4>{{persona.edad}}<br></h4>
-    <h4>{{persona.domicilio}}<br></h4>
+    <h3>{{persona.nombre}} {{persona.apellidos}}<br></h3>
+    
+    <h6>{{persona.edad}}<br></h6>
+    <h6>{{persona.domicilio}}<br></h6>
     <br>
     <a href="{% url 'personaupdate' persona.id %}">Modificar Datos</a>
+    <a href="{% url 'personaupdate' persona.id %}">Eliminar Registro</a>
+
     <br>
     *****************************************<br>
 
