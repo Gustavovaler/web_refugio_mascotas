@@ -3,7 +3,9 @@
 <div class="container">
 	<div class="container">
 	{%for mascota in mascotaslist%}
-<h2>Nombre: {{mascota.nombre}}</h2>
+
+<a href="{% url 'mascotadetail' mascota.id %}"><h2>Nombre: {{mascota.nombre}}</h2></a>
+
 <h3>Edad: {{mascota.edad_aproximada}}</h3>
 <h3>Sexo: {{mascota.sexo}}</h3>
 <h3>Fecha rescate: {{mascota.fecha_rescate}}</h3>

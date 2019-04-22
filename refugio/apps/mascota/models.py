@@ -6,6 +6,9 @@ from django.urls import reverse
 class Vacuna(models.Model):
 	nombre = models.CharField(max_length=100)
 
+	def get_absolute_url(self):
+		return reverse('mascotalist')
+
 	def __str__(self):
 		return self.nombre 
 		

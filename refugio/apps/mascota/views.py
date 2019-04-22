@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView,CreateView
-from .models import Mascota
+from django.views.generic import ListView,DetailView,CreateView, UpdateView
+from .models import Mascota, Vacuna
 from apps.adopcion.models import Persona
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, request
@@ -47,4 +47,40 @@ class PersonaList( LoginRequiredMixin, ListView):
 		return context
 		
 
+class VacunaCreate(LoginRequiredMixin,CreateView):
+	login_url = ('/accounts/login/')
+	model = Vacuna
+	template_name = 'nueva_vacuna.html'
+	fields = ['nombre']
 
+class MascotaDetail(LoginRequiredMixin,DetailView):
+	login_url = '/accounts/login/'
+	model = Mascota
+	template_name = 'mascota_detail.html'
+
+	def get_context_data(self,**kwargs):
+		context = super().get_context_data()
+		return context
+
+
+class MascotaUpdate(LoginRequiredMixin,UpdateView):
+	login_url = ('/account/login/')
+	model = Mascota
+	fields = '__all__'
+	template_name = 'mascota_update_form.html'
+	template_name_suffix = '_update_form'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data()
+		return context
+
+class PersonaUpdate(LoginRequiredMixin, UpdateView):
+	login_url = ('/account/login/')
+	model = Persona
+	fields = '__all__'
+	template_name = 'persona_update_form.html'
+	template_name_suffix = '_update_form'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data()
+		return context

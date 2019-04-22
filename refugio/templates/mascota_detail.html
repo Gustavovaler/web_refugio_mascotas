@@ -1,0 +1,21 @@
+{% extends 'header.html' %}
+{%block content%}
+<body>
+
+	<div class="container">
+		<h4>Nombre: {{object.nombre}}</h4>
+         <h4>Sexo: {{object.sexo}}</h4>	
+         <h4>Adoptante: {{object.persona}}</h4>
+         <h4>Edad: {{object.edad_aproximada}}</h4>
+         <h4>Fecha Ingreso: {{object.fecha_rescate}}</h4>
+
+     <a href="{% url 'mascotaupdate' mascota.id %}">Modificar</a>	
+
+
+	<a href="{% url 'mascotalist' %}">Volver Mascotas</a>
+		</div>
+	{%endblock%}
+    
+    
+</body>
+</html>

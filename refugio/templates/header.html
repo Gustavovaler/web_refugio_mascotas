@@ -26,9 +26,19 @@
 
        {% if  user.is_authenticated %}
 
+       <li class="nav-item">
+        <a href="{%url 'nueva_vacuna' %}" class="nav-link">Vacuna</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{%url 'nueva_mascota' %}" class="nav-link">Nueva Mascota</a>
+      </li>
+
+
       <li class="nav-item">
         <a href="{%url 'logout' %}" class="nav-link">Salir</a>
       </li>
+
 
        {% else %}
 
