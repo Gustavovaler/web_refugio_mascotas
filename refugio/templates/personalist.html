@@ -3,7 +3,7 @@
 
 <div class="container">
 <!--<a href="{% url 'logout' %}">Salir</a>-->
-	<h1>Personas</h1>
+	<h1>Padrinos</h1>
 
 <div class="container">
 <div class="">
@@ -14,12 +14,12 @@
 	
 {% for persona in personas %}
 
-    <h3>{{persona.nombre}} {{persona.apellidos}}<br></h3>
+    <h3> {{persona.nombre}} {{persona.apellidos}}<br></h3>
     
-    <h6>{{persona.edad}}<br></h6>
-    <h6>{{persona.domicilio}}<br></h6>
+    <h6>Edad: {{persona.edad}}<br></h6>
+    <h6>Domicilio: {{persona.domicilio}}<br></h6>
     <br>
-    <a href="{% url 'personaupdate' persona.id %}">Modificar Datos</a>
+    <a href="{% url 'personaupdate' persona.id %}">Modificar Datos</a><span> / </span>
     <a href="{% url 'personaupdate' persona.id %}">Eliminar Registro</a>
 
     <br>
