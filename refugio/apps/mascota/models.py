@@ -34,9 +34,6 @@ class Mascota(models.Model):
 
 class UserNew(User):
 
-	
-
-	
 	def get_absolute_url(self, **kwargs):
 		return reverse('mascotalist')
 		
