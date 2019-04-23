@@ -105,9 +105,12 @@ class UserCreate(UserNew, CreateView):
 	          'password',
 	          ]
 
-	def set_password(self):
-	
-		super().set_password()
+
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data()
+		print(UserNew.password)
+		return context
 
 
 
