@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView,CreateView, UpdateView
-from .models import Mascota, Vacuna
+from django.views.generic import ListView,DetailView,CreateView, UpdateView, View
+from .models import Mascota, Vacuna, UserNew
 from apps.adopcion.models import Persona
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, request
+from django.contrib.auth.models import User, UserManager
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse
 
 
 #vista de funcion para la landing page. A mejorar en un futuro proximo
@@ -91,3 +94,26 @@ class PersonaCreate(LoginRequiredMixin, CreateView):
 	model = Persona
 	template_name = 'nueva_persona.html'
 	fields = '__all__'
+
+class UserCreate(UserNew, CreateView):
+	model = UserNew
+	template_name = 'registration/registro_usuario.html'
+	fields = ['first_name',
+	          'last_name',
+	          'email',
+	          'username',
+	          'password',
+	          ]
+
+	def set_password(self):
+	
+		super().set_password()
+
+
+
+
+
+	
+
+
+

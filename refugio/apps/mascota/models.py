@@ -1,6 +1,7 @@
 from django.db import models
 from apps.adopcion.models import Persona
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class Vacuna(models.Model):
@@ -29,6 +30,11 @@ class Mascota(models.Model):
 	class Meta:
 		"""docstring for Meta"""
 		verbose_name='Mascota'
+
+class UserNew(User):
+	
+	def get_absolute_url(self, **kwargs):
+		return reverse('mascotalist')
 		
 
 		

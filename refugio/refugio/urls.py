@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from apps.mascota import views
-from apps.mascota.views import MascotaList, MascotaDetail, MascotaUpdate, PersonaUpdate
+from apps.mascota.views import MascotaList, MascotaDetail, MascotaUpdate, PersonaUpdate, UserCreate
 from apps.mascota.views import PersonaDetail, MascotaCrear, PersonaList, VacunaCreate, PersonaCreate
 
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('mascota/int:<pk>', MascotaDetail.as_view(),name = 'mascotadetail'),
     path('mascota_modificar/int:<pk>', MascotaUpdate.as_view(), name = 'mascotaupdate'),
     path('mascota',MascotaList.as_view(),name='mascotalist'),
+    path('nuevo_usuario', UserCreate.as_view(), name = 'usuariocreate'),
     path('persona_modificar/<pk>', PersonaUpdate.as_view(), name =  'personaupdate'),
     path(r'persona/<int:pk>',PersonaDetail.as_view(), name='personadetail'),
     path('nueva_persona', PersonaCreate.as_view(), name = 'personacreate'),
